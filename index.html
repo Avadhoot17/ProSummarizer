@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProSummarize - Smart Text Summarizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ProSummarize</h1>
+        <!-- Theme toggle will be added later -->
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="input-section">
+                <h2>Enter Text to Summarize</h2>
+                <textarea id="inputText" placeholder="Paste your long text, article, or report here..."></textarea>
+                <button id="summarizeBtn">Summarize</button>
+            </section>
+
+            <section class="summary-section">
+                <h2>Summary</h2>
+                <div id="summaryOutput" class="summary-output-placeholder">
+                    Your summary will appear here...
+                </div>
+                <div class="summary-actions">
+                    <button id="copySummaryBtn" style="display: none;">Copy Summary</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="word-counts">
+            <p>Original Word Count: <span id="originalWordCount">0</span></p>
+            <p>Summary Word Count: <span id="summaryWordCount">0</span></p>
+        </div>
+        <!-- Download buttons will be added later -->
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+:root {
+    --primary-color: #6D28D9; /* Purple */
+    --secondary-color: #EC4899; /* Pink */
+    --accent-color: #F59E0B; /* Amber */
+    --background-color: #F3F4F6; /* Light Gray */
+    --text-color: #1F2937; /* Dark Gray */
+    --card-background: #FFFFFF;
+    --border-color: #D1D5DB;
+    --font-family: 'Poppins', sans-serif;
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+main {
+    padding: 30px 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.input-section, .summary-section {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section h2, .summary-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 12px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#inputText, #summaryOutput, .summary-output-placeholder {
+    width: 100%;
+    min-height: 350px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
+    box-sizing: border-box;
+    flex-grow: 1; /* Allow textarea/output to grow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#inputText:focus, #summaryOutput:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.2);
+    outline: none;
+}
+
+#inputText {
+    margin-bottom: 20px;
+}
+
+#summarizeBtn, #copySummaryBtn {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#summarizeBtn:hover, #copySummaryBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+#summarizeBtn:active, #copySummaryBtn:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#summarizeBtn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+.summary-output-placeholder {
+    color: #7f8c8d;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f9fafb; /* Slightly different background for placeholder */
+    border: 2px dashed var(--border-color);
+}
+
+#summaryOutput {
+    background-color: #f9fafb;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.summary-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+footer {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.word-counts {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.word-counts p {
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .input-section, .summary-section {
+        min-width: auto;
+        padding: 20px;
+    }
+    .input-section h2, .summary-section h2 {
+        font-size: 1.5rem;
+    }
+
+    #inputText, #summaryOutput, .summary-output-placeholder {
+        min-height: 280px;
+    }
+    .word-counts {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Snackbar styles (already in script.js, but good to have here for completeness or if moved) */
+/*
+#snackbar { ... }
+#snackbar.show { ... }
+@-webkit-keyframes fadein { ... }
+@keyframes fadein { ... }
+@-webkit-keyframes fadeout { ... }
+@keyframes fadeout { ... }
+*/
